@@ -1,0 +1,39 @@
+<div class="container d-flex align-items-center justify-content-center mt-5">
+    <h3>
+        Enter values to register!
+    </h3>
+</div>
+<div class="container row-3 d-flex align-items-center justify-content-center mt-4">
+    <form [formGroup]="form" class="row needs-validation text-center" (ngSubmit)="OnSubmit()" novalidate>
+      <div class="col">
+        <div class="mb-3">
+          <label for="login" class="form-label md">Login/Username*</label>
+          <input type="text" class="form-control" id="login" formControlName="login">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password*</label>
+          <input type="password" class="form-control" id="password" formControlName="password" required>
+        </div>
+        <div class="mb-3">
+            <label for="confirm-password" class="form-label">Confirm Password*</label>
+            <input type="password" class="form-control" id="confirm-password" formControlName="confirmPassword" required>
+          </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">E-mail Address*</label>
+            <input type="email" class="form-control" id="email" formControlName="email">
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="number" class="form-control" id="phone" formControlName="phone">
+        </div>     
+        <button type="submit" class="btn btn-primary">Register!</button>
+      </div>
+    </form>
+  </div>
+  <div *ngIf="isError" class="container d-flex align-items-center justify-content-center mt-3">
+    <div class="row">
+      <div class="col">
+        <ngb-alert [type]="'danger'" [dismissible]="false">{{errorText}}</ngb-alert>
+      </div>
+    </div>
+  </div>

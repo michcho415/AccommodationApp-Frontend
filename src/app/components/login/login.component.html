@@ -1,0 +1,30 @@
+<div class="container text-center mt-5" style="height:3cm">
+    <h2>Welcome to Accommodation App</h2>
+  </div>
+  <div class="container d-flex align-items-center justify-content-center mt-4">
+    <form [formGroup]="form" class="row text-center" (ngSubmit)="OnSubmit()" >
+      <div class="col">
+        <div class="mb-3">
+          <label for="login" class="form-label md">Login</label>
+          <input type="text" class="form-control" id="login" formControlName="login">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" formControlName="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+    </form>
+  </div>
+  
+  <div *ngIf="isError" class="container d-flex align-items-center justify-content-center mt-4">
+    <div class="row">
+      <div class="col">
+        <ngb-alert [type]="'danger'" [dismissible]="false">{{errorText}}</ngb-alert>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container d-flex align-items-center justify-content-center mt-5">
+    <button class="btn btn-primary " (click)="register()">Dont have an account? Register!</button>
+  </div>
