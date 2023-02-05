@@ -37,7 +37,7 @@ export class RegisterComponent {
       {
         username: this.form.value.login!,
         password: this.form.value.password!,
-        email: this.form.value.email!,
+        emailAddress: this.form.value.email!,
         phone: this.form.value.phone ?? ''
       }
     )
@@ -58,7 +58,7 @@ export class RegisterComponent {
     this.isError = false;
     if(this.form.value.login == null || this.form.value.login === "") {
       this.isError = true;
-      this.errorText = "Login is required!";
+      this.errorText = "Login is required!";  
       return this.isError;
     }
     if(this.form.value.password == null ||
