@@ -26,7 +26,8 @@
         <div data-bs-spy="scroll" class="col">
             <div *ngIf="this.apartments.length != 0">
                 <div *ngFor="let apartment of apartments">
-                    
+                    <p>{{apartment.name}}</p>
+                    <p>{{apartment.description}}</p>
                 </div>
             </div>
         </div>

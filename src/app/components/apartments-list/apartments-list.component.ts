@@ -85,6 +85,8 @@ export class ApartmentsListComponent implements OnInit {
     ).subscribe({
       next: (response) => {
         this.isError = false;
+        this.apartments = response.apartments;
+        var count = response.numberOfApartments;
       },
       error: (error) => {
         this.isError = true;
